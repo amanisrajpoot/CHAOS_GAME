@@ -12,16 +12,26 @@ export interface ObstacleConfig {
 
 export default class ObstacleGenerator {
     private static readonly DEADLY_POOL = [
-        "🧱", "🚫", "💣", "🔥", "🔪", "🛑", "🚧", "🗿"
+        "📉", // Stonks Down
+        "🚔", // Horny Jail
+        "🗑️", // Trash
+        "🚩", // Red Flag
+        "☢️", // Toxic
+        "🧊", // Freeze
+        "🧱", // Wall
+        "🪦", // RIP
+        "💸", // Broke
+        "💩", // Shitpost
+        "🚧"  // Barrier
     ];
 
     private static readonly FAKE_POOL = [
-        "👻", // Ghost
-        "💨", // Fart/Air
-        "💭", // Thought
-        "🕸️", // Web
-        "🌫️", // Fog
-        "🫧"  // Bubble
+        "👻", // Ghosting
+        "💨", // Fart
+        "💭", // Delusion
+        "🎣", // Bait
+        "🧢", // Cap
+        "✨"  // Sparkle
     ];
 
     static getNext(): ObstacleConfig {

@@ -59,7 +59,27 @@ export default class SoundSynth {
 
         osc.start();
         osc.stop(this.ctx.currentTime + 0.4);
+        osc.stop(this.ctx.currentTime + 0.4);
         lfo.stop(this.ctx.currentTime + 0.4);
+    }
+
+    playBonk() {
+        this.resume();
+        const osc = this.ctx.createOscillator();
+        const gain = this.ctx.createGain();
+
+        osc.type = "triangle";
+        osc.frequency.setValueAtTime(200, this.ctx.currentTime);
+        osc.frequency.exponentialRampToValueAtTime(50, this.ctx.currentTime + 0.1);
+
+        gain.gain.setValueAtTime(0.8, this.ctx.currentTime);
+        gain.gain.linearRampToValueAtTime(0.01, this.ctx.currentTime + 0.1);
+
+        osc.connect(gain);
+        gain.connect(this.masterGain);
+
+        osc.start();
+        osc.stop(this.ctx.currentTime + 0.1);
     }
 
     playSuccess() {
